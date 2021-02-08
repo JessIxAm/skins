@@ -13,14 +13,74 @@ body{
      font-family: "Josefin Sans", sans-serif;
      /*background-color:#c9e8f2 ;*/
      background-image: linear-gradient(to bottom, #c9e8f2, #bce1ee, #afdbea, #a2d4e6, #95cde2);
-     height: 100vh;
+     /* height: 100vh; */
 }
 #header{
-     margin-bottom: calc( 2rem + .5vh);
+     margin-bottom: calc( 2rem + .5vh); /*todo recalculate it!!*/
 }
 #main{
      position: relative;
 }
+/****HERO***/
+.hero{
+     flex-direction: column;
+}
+
+/***PRODUCT HERO ***/
+.product_hero{
+
+     flex-direction: column;
+
+     margin-bottom: calc( 2rem + .5vh); /*todo recalculate it!!*/
+}
+.product_hero .span_product{
+     font-size: 1.1rem;
+     position: relative;
+}
+.span_product::before{
+     content: '';
+
+     position: absolute;
+     top: 35%;
+     left: -92%;
+
+     width: 60%;
+     height: 3px;
+
+     background-color: var(--color-accent-primary);
+}
+
+.product_hero #title{
+     font-size: calc(3rem + 1vw);
+     margin: 1rem 0;
+}
+
+.product_hero p{
+     text-align: justify;
+     margin-bottom: 1rem;
+}
+
+.product_hero a{
+     align-self: flex-start;
+     padding:1em 1em;
+     border-radius: 10px;
+
+     background-color: var(--color-bg-secondary) ;
+
+     transition: all 1s ease;
+}
+.product_hero a:hover,
+.product_hero a:focus{
+     color: var(--color-white);
+     background-color: var(--color-accent-primary);
+}
+
+.product_hero i{
+     transform: rotate(-35deg);
+}
+
+
+
 
 /**HERO IMAGE CONTAINER*/
 
@@ -31,7 +91,7 @@ body{
 }
 .hero_image_shape::before{
      content: '';
-     position: absolute;
+     position: fixed;
      width: 100%;
      height: 100%;
 
@@ -45,7 +105,7 @@ body{
 }
 
 .hero_image{
-     width: 90%;
+     width: 60vw;
      
      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
      
@@ -58,8 +118,12 @@ body{
 }
 
 .hero_image_container{
-     margin-bottom: calc(5rem - 1vw);
+     margin-bottom: calc(2rem - 1vw); /*todo recalculate it!!*/
 }
+
+/**HERO IMAGE CONTAINER ends*/
+
+
 /***FORM****/
 #form{
      margin: 0 auto;
@@ -67,6 +131,8 @@ body{
      max-width: 350px;
      height: 100px;
      
+     margin-bottom: calc(2rem - 1vw); /*todo recalculate it!!*/
+
 }
 
 .mail_regis{
@@ -101,4 +167,40 @@ input[type="submit"]{
      position: absolute;
      right: 20px;
      color:var(--color-white);
+}
+
+/***FORM ENDS****/
+
+
+
+/*? MEDIA QUERY FOR BIGGER DEVICES****/
+@media screen and (min-width: 850px) {
+     #main .hero{
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 50px;
+
+
+          margin-bottom: calc(2rem - 1vw);  /*todo to recalculate!**/
+
+     }
+     .product_hero{
+          margin-top: -5rem;
+     }
+     .product_hero .span_product{
+          margin-bottom: 2rem;
+     }
+     form#form{
+
+          position: relative;
+          max-width: 450px;
+          margin: -10rem 0 2rem;
+          justify-content: flex-start;
+     }
+     #form #email{
+          width: 400px;
+          max-width: 400px;
+     }
+
+
 }
