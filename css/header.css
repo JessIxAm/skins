@@ -1,0 +1,307 @@
+/**wrapper**/
+#wrapper{
+     margin: 0 auto;
+     max-width: 1300px;
+     color: var(--color-primary);
+     padding: 1rem;
+}
+
+/**header**/
+#header{
+     width: 100%;
+     justify-content: space-between;
+
+     position: relative;
+}
+/**logo**/
+#header-img{
+     width: 70px;
+     height: 70px;
+     border-radius: 50%;
+}
+
+/**label for menu-toggler**/
+label {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     /* background-color: red; */
+     cursor: pointer;
+     position: relative;
+     z-index: 100;
+}
+     /*menu-toggler*/
+     #menu-toggler {
+     position: relative;
+     height: 3px;
+     width: 30px;
+     border-radius: 1.5px;
+     background-color: var(--color-white);
+
+     transition: transform 1s ease;
+     }
+     #menu-toggler::before,
+     #menu-toggler::after {
+     content: "";
+     position: absolute;
+     height: inherit;
+     width: inherit;
+     border-radius: 1.5px;
+     background-color: #181c3f;
+     }
+     #menu-toggler::before {
+     top: -9px;
+     }
+     #menu-toggler::after {
+     top: 9px;
+     }
+
+     /*tuning our menu-toggler*/
+     label:hover #menu-toggler{
+          transform: scaleX(1.1);
+     }
+
+     /**become a cross when the checkbox is checked**/
+     #checkbox-menu:checked ~ label #menu-toggler{
+          transform: rotate(45deg);
+     }
+     #checkbox-menu:checked ~ label #menu-toggler::before,
+     #checkbox-menu:checked ~ label #menu-toggler::after{
+          transform: rotate(-90deg);
+          top:0;
+     }
+
+
+     /*checkbox-menu will disappear*/
+     #checkbox-menu {
+     position: absolute;
+     top: 0px;
+     left: -10000px;
+
+     display: none;
+     }
+
+/**the nav-bar**/
+#nav-bar {  /*!to change on media query */
+     opacity: 0;
+     pointer-events: none;
+     height: 0px;
+
+     background: rgba(0, 0, 0, 0.2);
+
+     -webkit-transition: opacity 1s ease;
+     -moz-transition: opacity 1s ease;
+     -ms-transition: opacity 1s ease;
+     -o-transition: opacity 1s ease;
+     transition: all 1s ease;
+
+     /*styling nav*/
+     position: absolute;
+     top: -1rem;
+     right: -1rem;
+     width: 80%;
+
+     /*it won't touch the menu-toggler*/
+     padding-top: 2rem;
+
+     /*styling the items*/
+     flex-direction: column;
+     justify-content: space-evenly;
+
+     font-size: 1.3rem;
+
+}
+
+/**--> appears on toggle **/
+#checkbox-menu:checked ~ #nav-bar { /*!to change on media query */
+     opacity: 1;
+     pointer-events: auto;
+     height: 90vh;
+}
+
+/***working on the menu-items inside***/
+/*ul*/
+#nav-bar ul, .account{
+     min-height:30vh;  /*!to change on media query */
+     width: 90%;
+     margin: 0 auto;
+
+     flex-direction: column;  /*!to change on media query */
+     justify-content: space-evenly;
+     
+
+}
+
+li{
+     /* background-color: red; */
+}
+
+
+li a{
+     display: inline-block;
+     height: 50px;
+     min-width: 170px ;
+     padding: 1rem;
+     text-align: center;
+
+     position: relative;
+     z-index: 100;
+
+     transition: all .5s ease;
+
+}
+
+a:hover,
+a:focus{
+     transform-origin: 100%;
+     color: var(--color-white);
+
+}
+
+li a::after{
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     height: 0;
+     width: 0;
+     z-index: -1;
+
+     transition: all .5s ease;
+}
+
+li a:hover::after{
+     height: 100%;
+     min-width: 50%; /*todo remove it if you don't like*/
+
+     background-color: var(--color-accent-primary);
+}
+
+
+
+
+
+/*buttons*/
+.account{
+     margin-top: 2rem;
+}
+
+button.sign{
+     min-width: 170px;
+     background-color: var(--color-accent-primary);
+     color: var(--color-white);
+     padding: 1rem;
+
+     transition: all 1s ease;
+}
+button.sign:hover,
+button.sign:focus{
+     background-color: var(--color-bg-secondary);
+     color: var(--color-accent-primary);
+     border:none !important;
+}
+button.signin{
+     background:none;
+     border-bottom: 1px solid var(--color-bg-secondary);
+
+     transition: all 1s ease;
+}
+
+.cart{
+     margin-top: .5rem;  /*!to change on media query */
+
+     height: 50px;
+     width: 50px;
+     border-radius: 50%;
+
+     /* background-color: var(--color-white); */
+}
+.cart:hover{
+
+     color: var(--color-accent-secondary);
+
+}
+
+
+/*? MEDIA QUERY FOR BIGGER DEVICES****/
+@media screen and (min-width: 850px) {
+     /*hamburger menu -> disappears*/
+     label {
+          display: none;
+          position: absolute;
+          top: -10000px;
+     }
+
+
+     #header{
+          /* background-color: #dfd; */
+          position: relative;
+     }
+
+     #checkbox-menu:checked ~ #nav-bar{
+          height:70px !important; /*!!!! IMPORTANT IF THE USERS LEAVES THE MENU-TOGGLER ON WHILE RESIZING THE PAGE*/
+     } 
+
+     #nav-bar{
+          position: relative; 
+          top: 0;
+          right: 0;
+          padding-top: 0;
+
+          width: calc(100% - 200px);
+
+          background: none;
+          height: 70px; /*! IF it is not checked*/
+
+          opacity: 1;
+          pointer-events: auto;
+          flex-direction: row;
+          justify-content: space-between;
+
+          transition-delay: 0s ;
+     }
+
+     #nav-bar ul, 
+     .account{
+          min-height: 0;
+          max-height:70px !important;
+          flex-direction: row;
+          font-size: 1rem;
+     }
+
+     #nav-bar ul{
+          width: 54% ;
+     }
+     #nav-bar ul a{
+          padding: 1rem .5rem;
+          min-width: calc(100px + 1vw);
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
+
+
+     #nav-bar .account{
+          margin-top: 0;
+          justify-content: flex-end;
+     }
+
+     #nav-bar li, 
+     button{
+          min-width: 0;
+          padding: 1rem 0;
+     }
+
+     #nav-bar button.sign{
+          min-width: 0;
+          width: calc(100px + 1vw);
+          padding: 1rem .5rem;
+          margin-left: .6vw ;
+     }
+     #nav-bar button.signin{
+          color: var(--color-accent-secondary);
+          border-bottom: 1px solid var(--color-accent-secondary);
+     }
+}

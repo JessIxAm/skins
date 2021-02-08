@@ -18,12 +18,39 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
      <!-- favicon -->
-     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="images/5.png" type="image/x-icon">
      <!-- stylesheets -->
+     <link rel="stylesheet" href="css/template.css">
+     <link rel="stylesheet" href="css/header.css">
      <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+     <div id="wrapper">
+          <header id="header" class="flex">
+               <div class="img-div">
+                    <a href="index.html"><img id="header-img" src="images/5.png" alt="company logo. a bottle and a flower surrounded from another flower"> </a>
+               </div>
+
+               <input id="checkbox-menu" type="checkbox" />
+               <label for="checkbox-menu" class="flex">
+                    <span id="menu-toggler"></span>
+               </label>
+
+               <nav id="nav-bar" class="flex">
+                    <ul class="flex">
+                         <li class="nav-link flex"><a href="#">Products</a></li>
+                         <li class="nav-link flex"><a href="#">Services</a></li>
+                         <li class="nav-link flex"><a href="#">Blog & Advices</a></li>
+                    </ul>
+                    <div class="account flex">
+                         <button class="sign signup">Sign Up</button>
+                         <button class="sign signin">Sign In</button>
+                         <button class="cart flex"><i class="fas fa-cart-plus"></i></button>
+                    </div>
+               </nav>
+          </header>
+     </div>
 
 </body>
 

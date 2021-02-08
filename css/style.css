@@ -1,0 +1,17 @@
+:root{
+     --color-primary: #343946;
+     --color-white: #f2f5f7;
+     --color-accent-primary: #18173f;
+     --color-accent-secondary: #274393;
+
+     --color-bg-principal: #c9e8f2 ;
+     --color-bg-secondary:#f8e4d8;
+
+     --color-additional: #789487;
+}
+body{
+     font-family: "Josefin Sans", sans-serif;
+     /*background-color:#c9e8f2 ;*/
+     background-image: linear-gradient(to bottom, #c9e8f2, #bce1ee, #afdbea, #a2d4e6, #95cde2);
+     height: 100vh;
+}
