@@ -25,10 +25,17 @@ button,input{
      color: inherit;
      cursor: pointer;
 }
-a{
+a,
+a:hover,
+a:focus,
+a:active{
      text-decoration: none;
      color: inherit;
 }
 li{
      list-style:none;
+}
+img{
+     max-width: 100%;
+     height: auto;
 }

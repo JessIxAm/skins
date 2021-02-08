@@ -15,3 +15,90 @@ body{
      background-image: linear-gradient(to bottom, #c9e8f2, #bce1ee, #afdbea, #a2d4e6, #95cde2);
      height: 100vh;
 }
+#header{
+     margin-bottom: calc( 2rem + .5vh);
+}
+#main{
+     position: relative;
+}
+
+/**HERO IMAGE CONTAINER*/
+
+.hero_image_shape{
+     filter: drop-shadow(10px 25px 5px #789487c0);
+     position: relative;
+
+}
+.hero_image_shape::before{
+     content: '';
+     position: absolute;
+     width: 100%;
+     height: 100%;
+
+     background-color: #7894872c;
+     right: -5px;
+     border: 1px solid #789487c0;
+
+     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+
+}
+
+.hero_image{
+     width: 90%;
+     
+     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+     
+     transform: rotate(-25deg);
+
+     box-shadow: 10px 15px 25px 50px #ccc;
+          -moz-box-shadow: 10px 10px 5px #ccc;
+          -webkit-box-shadow: 10px 10px 5px #ccc;
+          -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+.hero_image_container{
+     margin-bottom: calc(5rem - 1vw);
+}
+/***FORM****/
+#form{
+     margin: 0 auto;
+     width: 100%;
+     max-width: 350px;
+     height: 100px;
+     
+}
+
+.mail_regis{
+     display: relative;
+}
+
+#email,
+.fake_button{
+     height: 60px;
+     background-color: white;
+     border-radius: 10px;
+     padding: .5em .5em;
+}
+#email{
+     min-width: 180px;
+}
+input[type="submit"]{
+     height: 50px;
+     border-radius: 10px;
+     padding: .5em .8em;
+     padding-right: 2rem;
+
+     background-color: var(--color-accent-primary);
+     color: var(--color-white);
+}
+
+.fake_button{
+     position: relative;
+}
+
+.fake_button i{
+     position: absolute;
+     right: 20px;
+     color:var(--color-white);
+}
