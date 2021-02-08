@@ -11,15 +11,27 @@
 }
 body{
      font-family: "Josefin Sans", sans-serif;
-     /*background-color:#c9e8f2 ;*/
      background-image: linear-gradient(to bottom, #c9e8f2, #bce1ee, #afdbea, #a2d4e6, #95cde2);
-     /* height: 100vh; */
+     /* background-color:#c9e8f2 ; */
 }
+/**wrapper**/
+#wrapper{
+     margin: 0 auto;
+     max-width: 1300px;
+     color: var(--color-primary);
+     
+     background-image: linear-gradient(to bottom, #c9e8f2, #bce1ee, #afdbea, #a2d4e6, #95cde2);
+
+}
+
 #header{
      margin-bottom: calc( 2rem + .5vh); /*todo recalculate it!!*/
+     padding: 1rem;
 }
 #main{
      position: relative;
+     padding: 1rem;
+
 }
 /****HERO***/
 .hero{
@@ -201,6 +213,127 @@ input[type="submit"]{
           width: 400px;
           max-width: 400px;
      }
+}
 
 
+/***OTHER SECTION USELESS***/
+#main_down{
+     background-color: var(--color-bg-secondary);
+     width: 100%;
+     margin: 0 -1rem -1rem 0;
+     margin-top: calc(2rem + 10vw);
+     padding: 1rem;
+}
+
+/**SECTION SERVICES*/
+.other_section{
+     margin-bottom: 2rem;
+}
+.other_section h2{  
+     font-size: calc(1.5rem + 1vw);     /*! to recalculate*/
+     margin-bottom: calc(.5rem + .5vw);  /*! to recalculate*/
+}
+#services{
+     /*blablabla*/
+}
+
+#services .card_container{
+     flex-direction: column;
+}
+#services .card{
+     flex-direction: column;
+     justify-content: space-between;
+     margin-bottom: 1rem;
+     height: 300px;
+     width: calc(80% - 20vw);
+     min-width: 300px;
+
+     background-color: rgba(202, 202, 202, 0.864);
+}
+#services .card_title{
+     background-color: white;
+     font-size: 1.5rem;
+     height: 70px;
+     width: 100%;
+     padding: .5rem;
+}
+#services .card_body{
+     width: 100%;
+     padding: .5rem;
+     text-align: justify;
+}
+#services .price{
+     margin: 1rem 0;
+     font-size: 4rem;
+}
+.price span{
+     cursor: pointer;
+}
+.price span:hover,
+.price span:focus{
+     color: seashell;
+}
+
+/*? MEDIA QUERY FOR BIGGER DEVICES****/
+@media screen and (min-width: 850px) {
+     #services .card_container{
+          flex-direction: row;
+          justify-content: space-between;
+
+     }
+     #services .card{
+          flex-basis: 30.333%;
+          flex-grow: 0;
+          min-width: 250px;
+
+     }
+}
+
+/***PRODUCT****/
+.video_container{
+     position: relative;
+     overflow: hidden;
+     width: 100%;
+     padding-top: 56.25%; 
+
+     margin-bottom: 1rem;
+}
+#video{
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     /* bottom: 0; */
+     width: 100%;
+     height: 100%;
+     
+}
+.remove{
+     margin-bottom: 1rem;
+}
+#blogandadvices .remove:last-of-type{
+     margin-bottom: 2rem;
+}
+
+
+
+/****USELESS FOOTER*****/
+footer{
+     background-color: rgba(202, 202, 202, 0.864);
+     height: 100px;
+     padding: 1rem;
+}
+.fake{
+     font-size: 1.2rem;
+     color: red;
+     margin-right: 1rem;
+}
+
+.upbutton{
+     color: var(--color-accent-primary);
+     opacity: .5;
+
+     position: fixed;
+     right: 5%;
+     bottom: 5%;
 }
